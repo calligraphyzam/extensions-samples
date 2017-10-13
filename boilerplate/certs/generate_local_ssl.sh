@@ -8,7 +8,7 @@ openssl req \
   -x509 \
   -subj "/C=US/ST=California/L=San Francisco/O=Twitch/OU=web/CN=localhost" \
   -extensions SAN \
-  -config <( cat $( [[ "Darwin" = "$(uname -s)" ]]  && echo /System/Library/OpenSSL/openssl.cnf || echo /etc/ssl/openssl.cnf  ) \
+  -config <( cat $( [[ "Darwin" = "$(uname -s)" ]]  && echo /System/Library/OpenSSL/openssl.cnf || echo /OpenSSL-Win32/bin/openssl.cfg  ) \
     <(printf "[SAN]\nsubjectAltName='DNS:localhost'")) \
   -keyout "${NAME}.key" \
   -out "${NAME}.crt"

@@ -1,0 +1,1 @@
+openssl req -newkey rsa:4096 -days 1001 -nodes -x509 -subj "//C=US/ST=California/L=San Francisco/O=Twitch/OU=web/CN=localhost" -extensions SAN -config ".\openssl.cnf" -keyout "testing.key" -out "testing.crt"
